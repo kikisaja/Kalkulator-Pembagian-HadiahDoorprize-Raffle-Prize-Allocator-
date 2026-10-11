@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raffle Prize Allocator 🎁</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-card">
+        <!-- Header -->
+        <header class="app-header">
+            <span class="badge">Prize-Allocator</span>
+            <h1>🎁 PRIZE ALLOCATOR</h1>
+            <p>Bagi alokasi kuota & persentase doorprize acaramu secara otomatis!</p>
+        </header>
+
+        <!-- Form Input -->
+        <form id="prize-form" class="allocator-form">
+            
+            <!-- Total Anggaran / Unit Hadiah -->
+            <div class="input-group">
+                <label for="total-prize">Total Hadiah (Rp / Unit)</label>
+                <input type="number" id="total-prize" value="10000000" min="1000" step="1000" required>
+            </div>
+
+            <!-- Mode Pembagian -->
+            <div class="input-group">
+                <label for="allocation-preset">Skema Pembagian</label>
+                <select id="allocation-preset">
+                    <option value="standard">Standard Event (Utama 50%, Hiburan 30%, Doorprize 20%)</option>
+                    <option value="pyramid">Piramida (1 Utama, 3 Madya, 6 Doorprize)</option>
+                    <option value="equal">Rata / Equal (Semua Tingkat Sama Besar)</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-calculate">🚀 HITUNG ALOKASI HADIAH</button>
+        </form>
+
+        <!-- Result Card -->
+        <div class="result-card hidden" id="result-card">
+            <h2>Rincian Pembagian Hadiah</h2>
+
+            <div class="prize-list" id="prize-list-container">
+                <!-- Diisi otomatis oleh JavaScript -->
+            </div>
+
+            <div class="summary-box">
+                <span>Total Terintegrasi:</span>
+                <strong id="total-allocated-display">Rp 0</strong>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
